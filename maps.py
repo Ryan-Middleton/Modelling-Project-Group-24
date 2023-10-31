@@ -5,7 +5,7 @@ import math
 
 #constants
 ROWS, COLUMNS = 5, 5
-OBSTACLES_PER_COLUMN = math.floor(COLUMNS/2)
+OBSTACLES_PER_COLUMN = math.floor(COLUMNS / 2)
 
 #variables
 map = []
@@ -13,15 +13,17 @@ map = []
 for i in range (ROWS):
     row = []
 
+    #fill row with zeros(no obstacle)
     for j in range (COLUMNS):
-        row[j] = 0
+        row.append(0)
 
+    #add ones(obstacles)
     j = 0
     while(j < OBSTACLES_PER_COLUMN):
-        pos = random.randInt(0, COLUMNS)
-        if(not row[j]):
+        pos = random.randint(0, COLUMNS - 1)
+        if(not row[pos]):
             row[pos] = 1
             j += 1 
-    map.append(row)
 
-displayMap(map)
+    #add row to map
+    map.append(row)
