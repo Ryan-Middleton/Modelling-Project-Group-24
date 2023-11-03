@@ -4,6 +4,11 @@ Welcome to the major project for CISC/CMPE 204!
 
 Change this README.md file to summarize your project, and provide pointers to the general structure of the repository. How you organize and build things (which files, how you structure things, etc) is entirely up to you! The only things you must keep in place are what is already listed in the **Structure** section below.
 
+## Description
+
+Crossy Road is a mobile game where a chicken crosses a map with obstacles such as cars, rivers and trains in an attempt to get to the other side of the map. The chicken is able to move in all 4 cardinal directions to avoid these obstacles and complete its task. Our project, Crossy Path, aims to find a suitable path from the chickens’ start point to the finish.
+This project looks at the game from a top down view as a 2D grid of size n x n. Traditionally the game is endless, with players attempting to achieve a high score. We will have a set finish line which marks a winning game state if the chicken reaches it. There will be stationary and mobile obstacles that move at a turn based rate (I.e. car moves south one tile each time chicken moves).
+
 ## Structure
 
 * `documents`: Contains folders for both of your draft and final submissions. README.md files are included in both.
