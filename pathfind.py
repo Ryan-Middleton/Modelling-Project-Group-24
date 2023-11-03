@@ -1,4 +1,5 @@
 from maps import map
+from maps import iterateMap
 from display import displayMap
 
 """
@@ -34,6 +35,7 @@ def path(numCols,numRows, moveCount, map, a, b):
     if(b == numCols-1):
         return 1
     
+    iterateMap(map)
     return path(numCols,numRows,moveCount-1, map, a+1, b) + path(numCols,numRows,moveCount-1, map, a-1, b) + path(numCols,numRows,moveCount-1, map, a, b + 1) + path(numCols,numRows,moveCount-1, map, a, b -1)
     
 """
@@ -54,15 +56,48 @@ def easyPath(moveCount, map):
     
     return False
 
+"""
+!!! NOTES FOR TESTING !!!
 
-mapEx = [[0, 0, 1, 0, 1],
-         [0, 0, 1, 0, 1],
-         [0, 0, 0, 0, 1],
+Below is a set of pre-made maps which can be used for showing different cases of the pathfinder
+
+2 Represents moving objects, and each turn will move down by one, before jumping back up to the top
+1 Represents stationary objects, which stay in one place
+0 Represents an open space
+
+The chicken always starts from [2, 0] ( The middle of the left-most column )
+
+There is also an automatic map generator which makes a random map with only stationary objects, having two in each column
+
+Some uncommenting will be needed to try all cases.
+"""
+
+
+# Starts with no path, but moving objects change to allow the chicken to each the end. 
+# Demonstrates the moving objects
+mapEx = [[0, 2, 0, 2, 0],
          [0, 0, 1, 0, 0],
-         [1, 1, 1, 1, 1]]
+         [0, 2, 1, 2, 0],
+         [0, 0, 1, 0, 0],
+         [0, 2, 0, 2, 0]]
 
+#Demonstrates a case where pathfinder cannot find the end
+mapEx = [[0, 1, 0, 1, 0],
+         [0, 1, 0, 1, 0],
+         [0, 1, 2, 1, 0],
+         [0, 1, 0, 1, 0],
+         [0, 1, 0, 1, 0]]
+
+#Example 3
+mapEx = [[0, 2, 1, 2, 0],
+         [0, 2, 0, 0, 0],
+         [0, 2, 1, 0, 0],
+         [0, 0, 1, 0, 0],
+         [0, 2, 1, 2, 0]]
+
+#Automatic map generator:
 #mapEx = map
 
 displayMap(mapEx)
 
-print(easyPath(11, mapEx))
+print("Can find end: " , easyPath(11, mapEx))
