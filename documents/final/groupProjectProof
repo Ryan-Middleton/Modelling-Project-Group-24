@@ -1,0 +1,244 @@
+﻿CONJECTUREPANEL MostEpicSequents
+PROOF "(Fijn∧¬Fojn∧¬Fcjn), Eijo∨Sij∨Fijo, Fijn→¬Sij, (¬Fojn∧¬Fcjn)→¬Fijo ⊢ Eijo"
+INFER (Fijn∧¬Fojn∧¬Fcjn),
+     Eijo∨Sij∨Fijo,
+     Fijn→¬Sij,
+     (¬Fojn∧¬Fcjn)→¬Fijo 
+     ⊢ Eijo 
+FORMULAE
+0 ⊥,
+1 Eijo,
+2 ¬Fijo,
+3 Fijo,
+4 ¬Sij,
+5 Sij,
+6 Eijo∨Sij,
+7 Eijo∨Sij∨Fijo,
+8 Fijn,
+9 Fijn→¬Sij,
+10 Fijn∧¬Fojn,
+11 ¬Fojn,
+12 ¬Fojn∧¬Fcjn,
+13 ¬Fojn∧¬Fcjn→¬Fijo,
+14 ¬Fcjn,
+15 Fijn∧¬Fojn∧¬Fcjn,
+16 (¬Fojn∧¬Fcjn)→¬Fijo 
+IS
+SEQ (cut[B,C\14,1]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\10,14]) (hyp[A\15])) (cut[B,C\10,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\10,14]) (hyp[A\15])) (cut[B,C\11,1]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\8,11]) (hyp[A\10])) (cut[B,C\12,1]) ("∧ intro"[A,B\11,14]) (hyp[A\11]) (hyp[A\14]) (cut[B,C\2,1]) ("→ elim"[A,B\12,2]) (hyp[A\13]) (hyp[A\12]) (cut[B,C\8,1]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\8,11]) (hyp[A\10])) (cut[B,C\4,1]) ("→ elim"[A,B\8,4]) (hyp[A\9]) (hyp[A\8]) ("∨ elim"[A,B,C\6,3,1]) (hyp[A\7]) ("∨ elim"[A,B,C\1,5,1]) (hyp[A\6]) (hyp[A\1]) (cut[B,C\0,1]) ("¬ elim"[B\5]) (hyp[A\5]) (hyp[A\4]) ("contra (constructive)"[B\1]) (hyp[A\0]) (cut[B,C\0,1]) ("¬ elim"[B\3]) (hyp[A\3]) (hyp[A\2]) ("contra (constructive)"[B\1]) (hyp[A\0])
+END
+CONJECTUREPANEL MostEpicSequents
+PROOF "S11∧C10∧E, C10→C00, C00→C01, C01→C02, C02→E ⊢ C10→E"
+INFER S11∧C10∧E,
+     C10→C00,
+     C00→C01,
+     C01→C02,
+     C02→E 
+     ⊢ C10→E 
+FORMULAE
+0 E,
+1 C10,
+2 C02,
+3 C02→E,
+4 C10→E,
+5 C01,
+6 C01→C02,
+7 C00,
+8 C00→C01,
+9 C10→C00,
+10 S11∧C10,
+11 S11,
+12 S11∧C10∧E 
+IS
+SEQ (cut[B,C\10,4]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\10,0]) (hyp[A\12])) (cut[B,C\1,4]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\11,1]) (hyp[A\10])) (cut[B,C\7,4]) ("→ elim"[A,B\1,7]) (hyp[A\9]) (hyp[A\1]) (cut[B,C\5,4]) ("→ elim"[A,B\7,5]) (hyp[A\8]) (hyp[A\7]) (cut[B,C\2,4]) ("→ elim"[A,B\5,2]) (hyp[A\6]) (hyp[A\5]) (cut[B,C\0,4]) ("→ elim"[A,B\2,0]) (hyp[A\3]) (hyp[A\2]) ("→ intro"[A,B\1,0]) (hyp[A\0])
+END
+CONJECTUREPANEL Theorems
+PROOF "¬¬P ⊢ P"
+INFER ¬¬P 
+     ⊢ P 
+FORMULAE
+0 ⊥,
+1 ¬¬P,
+2 ¬P,
+3 P 
+IS
+SEQ ("contra (classical)"[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Theorems
+PROOF "P→Q ⊢ ¬Q→¬P"
+INFER P→Q 
+     ⊢ ¬Q→¬P 
+FORMULAE
+0 ⊥,
+1 ¬Q,
+2 Q,
+3 P,
+4 P→Q,
+5 ¬P 
+IS
+SEQ ("→ intro"[A,B\1,5]) ("¬ intro"[A\3]) (cut[B,C\2,0]) ("→ elim"[A,B\3,2]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Theorems
+PROOF "P→Q, ¬Q ⊢ ¬P"
+INFER P→Q,
+     ¬Q 
+     ⊢ ¬P 
+FORMULAE
+0 ⊥,
+1 ¬Q,
+2 Q,
+3 P,
+4 P→Q 
+IS
+SEQ ("¬ intro"[A\3]) (cut[B,C\2,0]) ("→ elim"[A,B\3,2]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Theorems
+PROOF "P∨¬P"
+INFER P∨¬P 
+FORMULAE
+0 ⊥,
+1 ¬(P∨¬P),
+2 P∨¬P,
+3 P,
+4 ¬P,
+5 ¬(P∨¬P)
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\3,0]) ("contra (classical)"[A\3]) (cut[B,C\2,0]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\3,4]) (hyp[A\4])) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0]) (cut[B,C\2,0]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\4,3]) (hyp[A\3])) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL Theorems
+PROOF "P ⊢ ¬¬P"
+INFER P 
+     ⊢ ¬¬P 
+FORMULAE
+0 ⊥,
+1 ¬P,
+2 P 
+IS
+SEQ ("¬ intro"[A\1]) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL MostEpicSequents
+CURRENTPROOF "(Fijn∧¬Fojn∧¬Fcjn), Eijo∨Sij∨Fijo, Fijn→¬Sij, Fijn→(Foja∨Fcja)∧Eijo ⊢ Eijo"
+INFER (Fijn∧¬Fojn∧¬Fcjn),
+     Eijo∨Sij∨Fijo,
+     Fijn→¬Sij,
+     Fijn→(Foja∨Fcja)∧Eijo 
+     ⊢ Eijo 
+FORMULAE
+0 Eijo,
+1 (Foja∨Fcja)∧Eijo,
+2 Foja∨Fcja,
+3 Fijn,
+4 Fijn→(Foja∨Fcja)∧Eijo,
+5 (Foja∨Fcja)∧Eijo,
+6 Fijn∧¬Fojn,
+7 ¬Fojn,
+8 Fijn∧¬Fojn∧¬Fcjn,
+9 ¬Fcjn,
+10 Eijo∨Sij∨Fijo,
+11 Fijn→¬Sij 
+IS
+SEQ (cut[B,C\6,0]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\6,9]) (hyp[A\8])) (cut[B,C\3,0]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\3,7]) (hyp[A\6])) (cut[B,C\5,0]) ("→ elim"[A,B\3,5]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\2,0]) (hyp[A\1])) (hyp[A\0])
+END
+CONJECTUREPANEL MostEpicSequents
+CURRENTPROOF "(Fijn∧¬Fojn∧¬Fcjn), Eijo∨Sij∨Fijo, Fijn→¬Sij, ¬Fcjn∨(Fijo∨Fajo), ¬Fojn∨(Fbjo∨Fijo) ⊢ Eijo"
+INFER (Fijn∧¬Fojn∧¬Fcjn),
+     Eijo∨Sij∨Fijo,
+     Fijn→¬Sij,
+     ¬Fcjn∨(Fijo∨Fajo),
+     ¬Fojn∨(Fbjo∨Fijo)
+     ⊢ Eijo 
+FORMULAE
+0 ¬Fcjn∨(Fijo∨Fajo),
+1 ¬Fcjn,
+2 Fijo∨Fajo,
+3 Eijo,
+4 ⊥,
+5 ¬Sij,
+6 Sij,
+7 Eijo∨Sij,
+8 Eijo∨Sij∨Fijo,
+9 Fijo,
+10 Fijn,
+11 Fijn→¬Sij,
+12 Fijn∧¬Fojn,
+13 ¬Fojn,
+14 Fijn∧¬Fojn∧¬Fcjn,
+15 ¬Fojn∨(Fbjo∨Fijo),
+16 ¬Fcjn∨(Fijo∨Fajo)
+IS
+SEQ (cut[B,C\12,3]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\12,1]) (hyp[A\14])) (cut[B,C\10,3]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\10,13]) (hyp[A\12])) (cut[B,C\5,3]) ("→ elim"[A,B\10,5]) (hyp[A\11]) (hyp[A\10]) ("∨ elim"[A,B,C\7,9,3]) (hyp[A\8]) ("∨ elim"[A,B,C\3,6,3]) (hyp[A\7]) (hyp[A\3]) (cut[B,C\4,3]) ("¬ elim"[B\6]) (hyp[A\6]) (hyp[A\5]) ("contra (constructive)"[B\3]) (hyp[A\4]) ("∨ elim"[A,B,C\1,2,3]) (hyp[A\0]) (NEXTGOAL) (NEXTGOAL)
+END
+CONJECTUREPANEL MostEpicSequents
+CURRENTPROOF "E00, C010, E02, E10, S11, E10, E12, E13, E20, E21, E22, (C010∧E00)→(C001∧E01), (C001∧E10)→(C102∧E00), (C102∧E20)→(C203∧E10), C203→T ⊢ T"
+INFER E00,
+     C010,
+     E02,
+     E10,
+     S11,
+     E10,
+     E12,
+     E13,
+     E20,
+     E21,
+     E22,
+     (C010∧E00)→(C001∧E01),
+     (C001∧E10)→(C102∧E00),
+     (C102∧E20)→(C203∧E10),
+     C203→T 
+     ⊢ T 
+FORMULAE
+0 T,
+1 C203,
+2 C203→T,
+3 C203∧E10,
+4 E10,
+5 C102∧E20,
+6 C102∧E20→C203∧E10,
+7 E20,
+8 C102,
+9 C102∧E00,
+10 E00,
+11 C001∧E10,
+12 C001∧E10→C102∧E00,
+13 C001,
+14 C001∧E01,
+15 E01,
+16 C010∧E00,
+17 C010∧E00→C001∧E01,
+18 C010,
+19 S11,
+20 E12,
+21 E02,
+22 E21,
+23 E22,
+24 E13,
+25 (C010∧E00)→(C001∧E01),
+26 (C102∧E20)→(C203∧E10),
+27 (C001∧E10)→(C102∧E00)
+IS
+SEQ (cut[B,C\16,0]) ("∧ intro"[A,B\18,10]) (hyp[A\18]) (hyp[A\10]) (cut[B,C\14,0]) ("→ elim"[A,B\16,14]) (hyp[A\17]) (hyp[A\16]) (cut[B,C\13,0]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\13,15]) (hyp[A\14])) (cut[B,C\11,0]) ("∧ intro"[A,B\13,4]) (hyp[A\13]) (hyp[A\4]) (cut[B,C\9,0]) ("→ elim"[A,B\11,9]) (hyp[A\12]) (hyp[A\11]) (cut[B,C\8,0]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\8,10]) (hyp[A\9])) (cut[B,C\5,0]) ("∧ intro"[A,B\8,7]) (hyp[A\8]) (hyp[A\7]) (cut[B,C\3,0]) ("→ elim"[A,B\5,3]) (hyp[A\6]) (hyp[A\5]) (cut[B,C\1,0]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\1,4]) (hyp[A\3])) (cut[B,C\0,0]) ("→ elim"[A,B\1,0]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL MostEpicSequents
+CURRENTPROOF "Sij∧¬Skj, Ekj∨Skj∨Fkjn, Sij→¬Fcjn∧¬Fkjn ⊢ Ekj∧¬Fcjn∧¬Fcjn"
+INFER Sij∧¬Skj,
+     Ekj∨Skj∨Fkjn,
+     Sij→¬Fcjn∧¬Fkjn 
+     ⊢ Ekj∧¬Fcjn∧¬Fcjn 
+FORMULAE
+0 ¬Fcjn,
+1 Ekj∧¬Fcjn,
+2 Ekj∧¬Fcjn∧¬Fcjn,
+3 ⊥,
+4 ¬Fkjn,
+5 Fkjn,
+6 ¬Skj,
+7 Skj,
+8 Ekj,
+9 Ekj∨Skj,
+10 Ekj∨Skj∨Fkjn,
+11 ¬Fcjn∧¬Fkjn,
+12 Sij,
+13 Sij→¬Fcjn∧¬Fkjn,
+14 Sij∧¬Skj 
+IS
+SEQ (cut[B,C\6,2]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\12,6]) (hyp[A\14])) (cut[B,C\12,2]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\12,6]) (hyp[A\14])) (cut[B,C\11,2]) ("→ elim"[A,B\12,11]) (hyp[A\13]) (hyp[A\12]) (cut[B,C\4,2]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\0,4]) (hyp[A\11])) (cut[B,C\0,2]) (LAYOUT "∧ elim" (0) ("∧ elim(L)"[A,B\0,4]) (hyp[A\11])) (cut[B,C\1,2]) ("∨ elim"[A,B,C\9,5,1]) (hyp[A\10]) ("∨ elim"[A,B,C\8,7,1]) (hyp[A\9]) (cut[B,C\1,1]) ("∧ intro"[A,B\8,0]) (hyp[A\8]) (hyp[A\0]) (hyp[A\1]) (cut[B,C\3,1]) ("¬ elim"[B\7]) (hyp[A\7]) (hyp[A\6]) ("contra (constructive)"[B\1]) (hyp[A\3]) (cut[B,C\3,1]) ("¬ elim"[B\5]) (hyp[A\5]) (hyp[A\4]) ("contra (constructive)"[B\1]) (hyp[A\3]) (cut[B,C\0,2]) (hyp[A\0]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END
