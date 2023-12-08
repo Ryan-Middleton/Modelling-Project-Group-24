@@ -5,7 +5,7 @@ from bauhaus.utils import count_solutions, likelihood
 
 # These two lines make sure a faster SAT solver is used.
 from nnf import config
-config.sat_backend = "kissat"
+#config.sat_backend = "kissat"
 
 # Encoding that will store all of your constraints
 E = Encoding()
@@ -182,9 +182,9 @@ S1 = stationaryObjectProposition([2,1])
 objectList.append(S1)
 
 # Enable to block end (returns false)
-S2 = stationaryObjectProposition([2,0])
+#S2 = stationaryObjectProposition([2,0])
 S3 = stationaryObjectProposition([2,2])
-objectList.append(S2)
+#objectList.append(S2)
 objectList.append(S3)
 
 
@@ -316,13 +316,18 @@ def crossy_roadRecursive(C, M):
 if __name__ == "__main__":
 
     T = crossy_road()
+    print("Flag 1")
     # Don't compile until you're finished adding all your constraints!
     T = T.compile()
     # After compilation (and only after), you can check some of the properties
     # of your model:
-    print("\nSatisfiable: %s" % T.satisfiable())
-    print("# Solutions: %d" % count_solutions(T))
-    print("   Solution: %s" % T.solve())
+    print("Flag 2")
+    print("\nSatisfiable:", T.satisfiable())
+    print("Flag 3")
+    print("# Solutions:", count_solutions(T))
+    print("Flag 4")
+    print("\tSolution: ", T.solve())
+    print("Flag 5")
 
     """
     print("\nVariable likelihoods:")

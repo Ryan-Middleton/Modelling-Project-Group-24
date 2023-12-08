@@ -7,7 +7,7 @@ from classes import *
 
 # These two lines make sure a faster SAT solver is used.
 from nnf import config;
-config.sat_backend = "kissat";
+config.sat_backend = "kissat"
 
 #create alot of predicates
 '''for x in range(WIDTH):
